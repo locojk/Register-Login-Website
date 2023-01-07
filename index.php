@@ -49,6 +49,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $confirm_error = "Your passwords do not match";
         $okay = false;
     }
+
+    if($okay) {
+        require "includes/register.php";
+    }
 }
 ?>
 
