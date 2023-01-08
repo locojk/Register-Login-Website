@@ -2,9 +2,9 @@
 
 //Class used to store user information
 class User {
-    private string $username;
-    private string $password;
-    private string $email;
+    private $username;
+    private $password;
+    private $email;
 
     public function __construct($username, $password, $email) {
         $this->username = $username;

@@ -2,7 +2,7 @@
 
 //Class to operate database connection, register and login
 class UserManager {
-    private PDO $pdo;
+    private $pdo;
 
     public function __construct() {
         // Connect to the database
