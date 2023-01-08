@@ -1,5 +1,6 @@
 <?php
 
+//Validation for register input
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $post_message = 'There was a POST request';
     $username = $_POST['username'];
@@ -44,6 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $okay = false;
     }
 
+    //If input valid, allow register
     if($okay) {
         require "includes/register.php";
     }

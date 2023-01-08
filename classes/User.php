@@ -1,5 +1,6 @@
 <?php
 
+//Class used to store user information
 class User {
     private string $username;
     private string $password;
