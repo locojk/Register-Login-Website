@@ -1,15 +1,18 @@
 <?php
-require_once "db.php";
 
-if (isset($username) && isset($user_password) && isset($email) && isset($connect)) {
+if (isset($username) && isset($password) && isset($email)) {
+    require_once "classes/UserManager.php";
 
-    $query = "INSERT INTO `Users`(`user_name`, `password`, `email`) VALUES ('$username', '$user_password', '$email')";
-    $result = $connect -> query($query);
+    $userManager = new UserManager();
 
-    if ($result) {
+    try {
+        $userManager->register($username, $password, $email);
         header("Location: loginPage.php");
-    } else {
-        $_POST['dbError'] = "Some error occur";
+    } catch (Exception $e) {
+        if ($e->getMessage() == "Username is already taken") {
+            $username_error = $e->getMessage();
+        }
+        echo "Error: " . $e->getMessage();
     }
 }
 

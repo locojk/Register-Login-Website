@@ -3,7 +3,7 @@
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $post_message = 'There was a POST request';
     $username = $_POST['username'];
-    $user_password = $_POST['user_password'];
+    $password = $_POST['user_password'];
     $email = $_POST['email'];
     $confirm = $_POST['confirm'];
     $okay = true;
@@ -22,30 +22,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $okay = false;
     }
 
-    if(empty($user_password)) {
+    if(empty($password)) {
         $password_error = "Please enter password";
         $okay = false;
-    } elseif (mb_strlen($user_password) < 12) {
-        $password_error = "Password must be at least 12 character";
+    } elseif (mb_strlen($password) < 8) {
+        $password_error = "Password must be at least 8 character";
         $okay = false;
-    } elseif (!preg_match('/[a-z]/', $user_password)) {
+    } elseif (!preg_match('/[a-z]/', $password)) {
         $password_error = "Password must has at least one lowercase letter";
         $okay = false;
-    } elseif (!preg_match('/[0-9]/', $user_password)) {
+    } elseif (!preg_match('/[0-9]/', $password)) {
         $password_error = "Password must has at least one number";
-        $okay = false;
-    } elseif (!preg_match('/[A-Z]/', $user_password)) {
-        $password_error = "Password must has at least one uppercase letter";
-        $okay = false;
-    } elseif (!preg_match('/\W/', $user_password)) {
-        $password_error = "Password must has at least one special character";
         $okay = false;
     }
 
     if(empty($confirm)) {
         $confirm_error = "Please confirm password";
         $okay = false;
-    } elseif($confirm != $user_password){
+    } elseif($confirm != $password){
         $confirm_error = "Your passwords do not match";
         $okay = false;
     }
