@@ -1,7 +1,7 @@
 # Register-Login-website
 
 This register/login system allows users to create an account and log in to a website, it can be viewed in the following link:
-URL: https://web.cs.dal.ca/~gao4/Register-Login-website/
+URL: https://web.cs.dal.ca/~gao4/rlw/
 
 To run the code locally and view it, please follow the instructions below.
 
