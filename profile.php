@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -27,8 +31,8 @@ include "includes/header.php"
                         <div class="card-body">
                             <div class="vh-50 m-auto d-flex flex-column align-content-center justify-content-center">
                                 <h2 class="text-center">Your profile</h2>
-                                <h3 class="text-center">Username: </h3>
-                                <h3 class="text-center">Email: </h3>
+                                <h3 class="text-center">Username: <?php echo $_SESSION['username']?></h3>
+                                <h3 class="text-center">Email: <?php echo $_SESSION['email']?></h3>
                                 <p class="text-center"><a href="logout.php">Log out</a></p>
                             </div>
                         </div>

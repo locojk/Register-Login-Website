@@ -1,3 +1,7 @@
+<?php
+require "includes/login.php"
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,14 +28,17 @@ include "includes/header.php"
             <div class="col-lg-6 m-auto">
                 <div class="card">
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
                             <div class="mb-3">
                                 <label for="exampleInputUsername1" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="exampleInputUsername1" name="username">
+                                <input type="text" class="form-control <?php if(isset($error)) echo "is-invalid"; ?>" id="exampleInputUsername1" name="username">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                                <input type="password" class="form-control <?php if(isset($error)) echo "is-invalid"; ?>" id="exampleInputPassword1" name="password">
+                                <?php if(isset($error)){?>
+                                    <p class="invalid-feedback"><?php echo $error ?></p>
+                                <?php } ?>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
