@@ -6,7 +6,7 @@ URL: https://web.cs.dal.ca/~gao4/rlw/
 To run the code locally and view it, please follow the instructions below.
 
 # Requirements
-PHP 8.0.8 or higher
+PHP 7.3.29 or higher
 MySQL 5.7 or higher
 
 # Setup
