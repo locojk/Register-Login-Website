@@ -7,6 +7,7 @@ To run the code locally and view it, please follow the instructions below.
 
 # Requirements
 PHP 7.3.29 or higher
+
 MySQL 5.7 or higher
 
 # Setup
